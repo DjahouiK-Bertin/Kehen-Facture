@@ -71,7 +71,25 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-inter);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-plus-jakarta-sans), var(--font-inter), sans-serif;
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-serif: var(--font-playfair-display), serif;
+
+  --color-brand-dark: #0a071b;
+  --color-brand-surface: #110b2a;
+  --color-brand-card: #160e36;
+  --color-brand-primary: #7c3aed;
+  --color-brand-accent: #8b5cf6;
+  --color-brand-glow: #c084fc;
+  --color-brand-pink: #ec4899;
+  --color-brand-light: #f8fafc;
+
+  --animate-shimmer: shimmer 4s infinite linear;
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
 }
 
 body {
@@ -96,4 +114,31 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted-foreground);
+}
+
+/* Custom styles for Landing Page */
+.hero-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(139, 92, 246, 0.22) 0%, rgba(236, 72, 153, 0.12) 35%, rgba(10, 7, 27, 0) 70%);
+}
+.card-glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.card-glow-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-glow-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(124, 58, 237, 0.25);
+}
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 40%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.badge-shimmer {
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.2) 0%, rgba(236, 72, 153, 0.2) 50%, rgba(124, 58, 237, 0.2) 100%);
+  background-size: 200% 100%;
 }
