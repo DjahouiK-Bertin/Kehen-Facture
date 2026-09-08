@@ -6,7 +6,7 @@ import {
   Receipt, ArrowRight, PlayCircle, CheckCircle2, 
   MessageCircle, FileText, Zap, FileSpreadsheet, 
   Calculator, History, Check, Bell, Star, Send, Building, 
-  X, Linkedin, Twitter, Facebook, Shield 
+  X, Shield 
 } from "lucide-react";
 
 export default function LandingPage() {
@@ -26,48 +26,49 @@ export default function LandingPage() {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? "bg-[#0a071b]/90 backdrop-blur-md border-b border-white/10 shadow-lg py-2" 
-            : "bg-[#0a071b]/50 backdrop-blur-sm border-b border-transparent py-4"
+            ? "bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm py-2" 
+            : "bg-white/50 backdrop-blur-sm border-b border-transparent py-4"
         }`} 
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-primary via-brand-glow to-brand-pink flex items-center justify-center shadow-lg shadow-brand-primary/30 group-hover:scale-105 transition-transform duration-300">
-              <Receipt className="text-white w-5 h-5" />
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-primary via-brand-glow to-brand-pink flex items-center justify-center shadow-lg shadow-brand-primary/30 group-hover:scale-105 transition-transform duration-300">
+              <Receipt className="text-white w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <span className="text-2xl font-display font-bold tracking-tight text-white">
-              KEHEN<span className="text-brand-glow">Facture</span>
+            <span className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+              KEHEN<span className="text-brand-primary">Facture</span>
             </span>
           </Link>
           
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-            <a href="#fonctionnalites" className="hover:text-white transition-colors relative group">
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <a href="#fonctionnalites" className="hover:text-brand-primary transition-colors relative group">
               Fonctionnalités
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-glow transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#comment-ca-marche" className="hover:text-white transition-colors relative group">
+            <a href="#comment-ca-marche" className="hover:text-brand-primary transition-colors relative group">
               Comment ça marche
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-glow transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#tarifs" className="hover:text-white transition-colors relative group">
+            <a href="#tarifs" className="hover:text-brand-primary transition-colors relative group">
               Tarifs
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-glow transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#temoignages" className="hover:text-white transition-colors relative group">
+            <a href="#temoignages" className="hover:text-brand-primary transition-colors relative group">
               Témoignages
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-glow transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           </nav>
           
           {/* Action Buttons */}
-          <div className="flex items-center gap-4">
-            <Link href="/login" className="hidden sm:inline-block text-sm font-semibold text-slate-300 hover:text-white px-4 py-2 transition-colors">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <Link href="/login" className="hidden sm:inline-block text-sm font-semibold text-slate-600 hover:text-brand-primary px-4 py-2 transition-colors">
               Connexion
             </Link>
-            <Link href="/signup" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-brand-primary to-brand-accent hover:from-purple-600 hover:to-brand-primary shadow-lg shadow-brand-primary/40 hover:shadow-brand-glow/50 transform hover:-translate-y-0.5 transition-all duration-200">
-              Commencer gratuitement
+            <Link href="/signup" className="inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-primary/90 shadow-md shadow-brand-primary/30 transform hover:-translate-y-0.5 transition-all duration-200">
+              <span className="sm:hidden">Démarrer</span>
+              <span className="hidden sm:inline">Commencer gratuitement</span>
             </Link>
           </div>
         </div>
@@ -75,56 +76,56 @@ export default function LandingPage() {
 
       <main>
         {/* BEGIN: HeroSection */}
-        <section className="relative bg-brand-dark min-h-[92vh] pt-32 pb-20 overflow-hidden hero-glow">
-          <div className="absolute top-1/4 -left-48 w-96 h-96 bg-brand-primary/20 rounded-full blur-3xl pointer-events-none"></div>
-          <div className="absolute top-1/3 -right-48 w-96 h-96 bg-brand-pink/15 rounded-full blur-3xl pointer-events-none"></div>
+        <section className="relative bg-slate-50 min-h-[92vh] pt-32 pb-20 overflow-hidden">
+          <div className="absolute top-1/4 -left-48 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute top-1/3 -right-48 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl pointer-events-none"></div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
               {/* Left Column: Copy & Actions */}
               <div className="lg:col-span-7 space-y-8 text-center lg:text-left animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 badge-shimmer text-xs sm:text-sm font-medium text-brand-glow shadow-inner">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-xs sm:text-sm font-medium text-brand-primary shadow-sm">
                   <span>✦ La facturation nouvelle génération en Afrique de l'Ouest &amp; Centrale</span>
                 </div>
                 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15] font-display">
-                  Fini le casse-tête des factures sur <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-amber-300">Word et Excel.</span>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.15]">
+                  Fini le casse-tête des factures sur <span className="text-brand-primary">Word et Excel.</span>
                 </h1>
                 
-                <p className="text-lg sm:text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
-                  Créez des factures professionnelles conformes aux normes locales en <span className="text-white font-medium">2 clics</span>, calculez la TVA à <span className="text-white font-medium">18%</span> instantanément et soyez payé <span className="text-brand-glow font-medium">3x plus vite</span>.
+                <p className="text-lg sm:text-xl text-slate-600 max-w-2xl font-light leading-relaxed">
+                  Créez des factures professionnelles conformes aux normes locales en <span className="text-slate-900 font-medium">2 clics</span>, calculez la TVA à <span className="text-slate-900 font-medium">18%</span> instantanément et soyez payé <span className="text-brand-primary font-medium">3x plus vite</span>.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                  <Link href="/signup" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-bold text-white bg-gradient-to-r from-brand-primary to-brand-pink hover:opacity-95 shadow-xl shadow-brand-primary/40 hover:shadow-brand-primary/60 transform hover:-translate-y-0.5 transition-all duration-200">
+                  <Link href="/signup" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-bold text-white bg-brand-primary hover:bg-brand-primary/90 shadow-lg shadow-brand-primary/30 transform hover:-translate-y-0.5 transition-all duration-200">
                     Commencer gratuitement
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
-                  <a href="#demo" className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-full text-base font-semibold text-slate-200 hover:text-white border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all duration-200">
-                    <PlayCircle className="text-brand-glow mr-2.5 w-5 h-5" />
+                  <a href="#demo" className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-full text-base font-semibold text-slate-700 hover:text-slate-900 border border-slate-300 hover:border-slate-400 bg-white transition-all duration-200 shadow-sm">
+                    <PlayCircle className="text-brand-primary mr-2.5 w-5 h-5" />
                     Voir la démo (1 min)
                   </a>
                 </div>
                 
                 {/* Trust Bar */}
-                <div className="pt-8 border-t border-white/10">
-                  <p className="text-xs uppercase tracking-wider font-semibold text-slate-400 mb-4">
+                <div className="pt-8 border-t border-slate-200">
+                  <p className="text-xs uppercase tracking-wider font-semibold text-slate-500 mb-4">
                     Encaissez sans effort avec les moyens de paiement locaux
                   </p>
-                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 sm:gap-7 opacity-85">
-                    <span className="flex items-center gap-1.5 text-slate-300 text-sm font-semibold tracking-wide bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 sm:gap-7">
+                    <span className="flex items-center gap-1.5 text-slate-700 text-sm font-semibold tracking-wide bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
                       <span className="w-2.5 h-2.5 rounded-full bg-cyan-400"></span> Wave
                     </span>
-                    <span className="flex items-center gap-1.5 text-slate-300 text-sm font-semibold tracking-wide bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+                    <span className="flex items-center gap-1.5 text-slate-700 text-sm font-semibold tracking-wide bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
                       <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span> Orange Money
                     </span>
-                    <span className="flex items-center gap-1.5 text-slate-300 text-sm font-semibold tracking-wide bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+                    <span className="flex items-center gap-1.5 text-slate-700 text-sm font-semibold tracking-wide bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
                       <span className="w-2.5 h-2.5 rounded-full bg-yellow-400"></span> MTN MoMo
                     </span>
-                    <span className="flex items-center gap-1.5 text-slate-300 text-sm font-semibold tracking-wide bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+                    <span className="flex items-center gap-1.5 text-slate-700 text-sm font-semibold tracking-wide bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
                       <span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span> Moov Money
                     </span>
-                    <span className="flex items-center gap-1.5 text-slate-300 text-sm font-semibold tracking-wide bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+                    <span className="flex items-center gap-1.5 text-slate-700 text-sm font-semibold tracking-wide bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
                       <span className="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Ecobank &amp; Visa
                     </span>
                   </div>
@@ -134,67 +135,67 @@ export default function LandingPage() {
               {/* Right Column: Mockup */}
               <div className="lg:col-span-5 relative animate-in fade-in zoom-in duration-1000 delay-200">
                 <div className="relative mx-auto max-w-md w-full group">
-                  <div className="absolute -inset-1.5 bg-gradient-to-r from-brand-primary via-purple-500 to-pink-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-100 transition duration-1000"></div>
-                  <div className="relative rounded-2xl bg-[#140e2e]/90 border border-purple-500/30 p-6 shadow-2xl text-slate-200">
-                    <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div className="absolute -inset-1.5 bg-gradient-to-r from-brand-primary via-purple-500 to-pink-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                  <div className="relative rounded-2xl bg-white border border-slate-200 p-6 shadow-2xl text-slate-700">
+                    <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                       <div>
-                        <span className="inline-block px-2.5 py-0.5 rounded text-xs font-semibold bg-brand-primary/30 text-brand-glow border border-brand-primary/40 mb-1">
+                        <span className="inline-block px-2.5 py-0.5 rounded text-xs font-semibold bg-brand-primary/10 text-brand-primary border border-brand-primary/20 mb-1">
                           Facture #KF-2024-089
                         </span>
-                        <h3 className="text-sm font-medium text-slate-300">Client : <strong className="text-white">Koffi &amp; Partners SARL</strong></h3>
-                        <p className="text-[11px] text-slate-400">Abidjan, Côte d'Ivoire • N° CC 204921</p>
+                        <h3 className="text-sm font-medium text-slate-600">Client : <strong className="text-slate-900">Koffi &amp; Partners SARL</strong></h3>
+                        <p className="text-[11px] text-slate-500">Abidjan, Côte d'Ivoire • N° CC 204921</p>
                       </div>
                       <div className="text-right">
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700 border border-emerald-200">
                           <CheckCircle2 className="w-3 h-3" /> Payé via Wave
                         </span>
                       </div>
                     </div>
                     
                     <div className="py-4 space-y-3">
-                      <div className="flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-white/5">
+                      <div className="flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-slate-50">
                         <div>
-                          <p className="font-medium text-white">Refonte Application Web B2B</p>
-                          <p className="text-[10px] text-slate-400">Phase 1 : Design &amp; Intégration</p>
+                          <p className="font-medium text-slate-900">Refonte Application Web B2B</p>
+                          <p className="text-[10px] text-slate-500">Phase 1 : Design &amp; Intégration</p>
                         </div>
-                        <span className="font-semibold text-slate-100">750 000 FCFA</span>
+                        <span className="font-semibold text-slate-900">750 000 FCFA</span>
                       </div>
-                      <div className="flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-white/5">
+                      <div className="flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-slate-50">
                         <div>
-                          <p className="font-medium text-white">Maintenance Cloud &amp; Infogérance</p>
-                          <p className="text-[10px] text-slate-400">Contrat mensuel garanti SLA</p>
+                          <p className="font-medium text-slate-900">Maintenance Cloud &amp; Infogérance</p>
+                          <p className="text-[10px] text-slate-500">Contrat mensuel garanti SLA</p>
                         </div>
-                        <span className="font-semibold text-slate-100">150 000 FCFA</span>
+                        <span className="font-semibold text-slate-900">150 000 FCFA</span>
                       </div>
                     </div>
                     
-                    <div className="border-t border-white/10 pt-3 space-y-1.5 text-xs">
-                      <div className="flex justify-between text-slate-400">
+                    <div className="border-t border-slate-100 pt-3 space-y-1.5 text-xs">
+                      <div className="flex justify-between text-slate-500">
                         <span>Sous-total HT :</span>
-                        <span className="text-slate-200">900 000 FCFA</span>
+                        <span className="text-slate-700">900 000 FCFA</span>
                       </div>
-                      <div className="flex justify-between text-brand-glow font-medium">
+                      <div className="flex justify-between text-brand-primary font-medium">
                         <span>TVA légale (18%) :</span>
                         <span>+ 162 000 FCFA</span>
                       </div>
-                      <div className="flex justify-between text-base font-bold text-white pt-2 border-t border-white/10">
+                      <div className="flex justify-between text-base font-bold text-slate-900 pt-2 border-t border-slate-100">
                         <span>Total TTC :</span>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">
                           1 062 000 FCFA
                         </span>
                       </div>
                     </div>
                     
-                    <div className="mt-5 pt-4 border-t border-white/10 flex items-center gap-3">
-                      <button className="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                    <div className="mt-5 pt-4 border-t border-slate-100 flex items-center gap-3">
+                      <button className="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors shadow-sm">
                         <MessageCircle className="w-4 h-4" /> Envoyer reçu client
                       </button>
-                      <button className="px-3 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-colors">
+                      <button className="px-3 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors">
                         <FileText className="w-4 h-4" /> PDF
                       </button>
                     </div>
                     
-                    <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[11px] font-semibold py-1.5 px-3.5 rounded-full shadow-lg border border-purple-300/30 flex items-center gap-1.5">
+                    <div className="absolute -bottom-4 -right-4 bg-brand-primary text-white text-[11px] font-semibold py-1.5 px-3.5 rounded-full shadow-lg border border-brand-primary/50 flex items-center gap-1.5">
                       <Zap className="text-amber-300 w-3 h-3 fill-current" /> Téléchargé en 0.8s
                     </div>
                   </div>
@@ -701,8 +702,8 @@ export default function LandingPage() {
       {/* BEGIN: MainFooter */}
       <footer className="bg-[#070414] text-slate-400 text-sm border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-            <div className="col-span-2 space-y-4">
+          <div className="flex flex-col md:flex-row justify-between gap-12">
+            <div className="md:w-2/5 space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
               <Link href="/" className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-brand-primary flex items-center justify-center text-white text-sm">
                   <Receipt className="w-4 h-4" />
@@ -719,43 +720,42 @@ export default function LandingPage() {
               </div>
             </div>
             
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">Produit</h4>
-              <ul className="space-y-2.5 text-xs">
-                <li><a href="#fonctionnalites" className="hover:text-white transition-colors">Factures &amp; Devis</a></li>
-                <li><a href="#fonctionnalites" className="hover:text-white transition-colors">Calcul TVA 18%</a></li>
-                <li><a href="#fonctionnalites" className="hover:text-white transition-colors">Relances WhatsApp</a></li>
-                <li><a href="#tarifs" className="hover:text-white transition-colors">Tarifs &amp; Offres</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">Entreprise</h4>
-              <ul className="space-y-2.5 text-xs">
-                <li><a href="#about" className="hover:text-white transition-colors">À propos</a></li>
-                <li><a href="#careers" className="hover:text-white transition-colors">Carrières</a></li>
-                <li><a href="#blog" className="hover:text-white transition-colors">Blog &amp; Guides</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors">Contactez-nous</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">Légal</h4>
-              <ul className="space-y-2.5 text-xs">
-                <li><a href="#terms" className="hover:text-white transition-colors">Conditions Générales</a></li>
-                <li><a href="#privacy" className="hover:text-white transition-colors">Confidentialité</a></li>
-                <li><a href="#legal" className="hover:text-white transition-colors">Mentions Légales</a></li>
-                <li><a href="#security" className="hover:text-white transition-colors">Sécurité des Données</a></li>
-              </ul>
+            <div className="md:w-3/5 grid grid-cols-2 sm:grid-cols-3 gap-8 text-center sm:text-left">
+              <div>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">Produit</h4>
+                <ul className="space-y-2.5 text-xs">
+                  <li><a href="#fonctionnalites" className="hover:text-white transition-colors">Factures &amp; Devis</a></li>
+                  <li><a href="#fonctionnalites" className="hover:text-white transition-colors">Calcul TVA 18%</a></li>
+                  <li><a href="#fonctionnalites" className="hover:text-white transition-colors">Relances WhatsApp</a></li>
+                  <li><a href="#tarifs" className="hover:text-white transition-colors">Tarifs &amp; Offres</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">Entreprise</h4>
+                <ul className="space-y-2.5 text-xs">
+                  <li><a href="#about" className="hover:text-white transition-colors">À propos</a></li>
+                  <li><a href="#careers" className="hover:text-white transition-colors">Carrières</a></li>
+                  <li><a href="#blog" className="hover:text-white transition-colors">Blog &amp; Guides</a></li>
+                  <li><a href="#contact" className="hover:text-white transition-colors">Contactez-nous</a></li>
+                </ul>
+              </div>
+              
+              <div className="col-span-2 sm:col-span-1 flex flex-col items-center sm:items-start">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">Légal</h4>
+                <ul className="space-y-2.5 text-xs text-center sm:text-left">
+                  <li><a href="#terms" className="hover:text-white transition-colors">Conditions Générales</a></li>
+                  <li><a href="#privacy" className="hover:text-white transition-colors">Confidentialité</a></li>
+                  <li><a href="#legal" className="hover:text-white transition-colors">Mentions Légales</a></li>
+                  <li><a href="#security" className="hover:text-white transition-colors">Sécurité des Données</a></li>
+                </ul>
+              </div>
             </div>
           </div>
           
           <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
             <p>© 2026 KEHENFacture SAS. Tous droits réservés.</p>
             <div className="flex items-center gap-5 text-base">
-              <a href="#" aria-label="LinkedIn" className="hover:text-white transition-colors"><Linkedin className="w-4 h-4" /></a>
-              <a href="#" aria-label="Twitter" className="hover:text-white transition-colors"><Twitter className="w-4 h-4" /></a>
-              <a href="#" aria-label="Facebook" className="hover:text-white transition-colors"><Facebook className="w-4 h-4" /></a>
               <a href="#" aria-label="WhatsApp" className="hover:text-white transition-colors"><MessageCircle className="w-4 h-4" /></a>
             </div>
           </div>
